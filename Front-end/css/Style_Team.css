@@ -1,0 +1,166 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+}
+
+.people
+{
+    background-color: #f1f1f1;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.person
+{
+    margin: 20px 30px;
+    display: table;
+}
+
+.person img
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.person .info_l
+{
+    padding: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.person .info_l span
+{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #bfd37a;
+}
+
+.person .info_l p
+{
+    margin-top: 50px;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.person .info_r
+{
+    padding: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.person .info_r span
+{
+    float: right;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #bfd37a;
+}
+
+.person .info_r p
+{
+    float: right;
+    text-align: right;
+    margin-top: 50px;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.person img
+{
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1050px)
+{
+    .container
+    {
+        top: 60px;
+    }
+
+    .person .info_l span
+    {
+        font-size: 30px;
+    }
+
+    .person .info_l p
+    {
+        font-size: 15px;
+        line-height: normal;
+        margin-top: 20px;
+    }
+
+    .person .info_r span
+    {
+        font-size: 30px;
+    }
+
+    .person .info_r p
+    {
+        font-size: 15px;
+        line-height: normal;
+        margin-top: 20px;
+    }
+
+    .person img
+    {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+}
+
+@media only screen and (max-width: 640px)
+{
+    .people
+    {
+        width: 100%;
+    }
+
+    .person .info_l span
+    {
+        font-size: 15px;
+    }
+
+    .person .info_l p
+    {
+        font-size: 10px;
+        line-height: normal;
+        margin-top: 10px;
+    }
+
+    .person .info_r span
+    {
+        font-size: 15px;
+    }
+
+    .person .info_r p
+    {
+        font-size: 10px;
+        line-height: normal;
+        margin-top: 10px;
+    }
+
+    .person img
+    {
+        max-width: 100px;
+        max-height: 100px;
+        margin-top: 30px;
+    }
+}

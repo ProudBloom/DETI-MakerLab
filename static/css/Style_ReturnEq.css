@@ -1,0 +1,261 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navBarLogoTop
+{
+    color: #FF9232;
+}
+
+.toggleButton .bar
+{
+    background-color: #FF9232;
+}
+
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+}
+
+.rent
+{
+    background-color: #f1f1f1;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.typeText
+{
+    text-align: center;
+    padding: 20px;
+}
+
+.typeSelectors
+{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-around;
+    background-color: #FF9232;
+}
+
+.typeSelectors a
+{
+    flex-basis: 25%;
+    margin: 15px 0px;
+    padding: 15px 35px;
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.typeSelectors .middle1
+{
+    border-left: 1px solid #1c1c1c;
+    border-right: 1px solid #1c1c1c;
+}
+
+.typeSelectors .middle2
+{
+    border-right: 1px solid #1c1c1c;
+}
+
+.typeSelectors a:hover
+{
+    background-color: #66c1ae;
+}
+
+.itemListText
+{
+    padding: 20px;
+}
+
+.browse
+{
+    margin: -50px 20px 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.browse input
+{
+    padding: 10px;
+    border-style:solid;
+    border:none;
+    border-radius: 10px;
+    background-color: #dddddd;
+    color: #1c1c1c;
+    margin-right: 15px;
+}
+
+.itemList
+{
+    display: flex;
+    justify-content: center;
+}
+
+#tab1
+{
+    border-collapse: collapse;
+    margin: 0px 5px 0px;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 95%;
+    justify-self: center;
+}
+
+#tab1 thead tr
+{
+    background-color: #FF9232;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+#tab1 th, #tab1 td
+{
+    padding: 12px 15px;
+}
+
+#tab1 tbody tr
+{
+    border-bottom: 1px solid #dddddd;
+}
+
+#tab1 tbody tr:nth-last-of-type(even)
+{
+    background-color: #e6e6e6;
+}
+
+#tab1 tbody tr:last-of-type
+{
+    border-bottom: 2px solid #FF9232;
+}
+
+.buttonDiv
+{
+    display: flex;
+    justify-content: center;
+}
+
+#rentBtt
+{
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid #FF9232;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    transition: all .2s;
+}
+
+#rentBtt span
+{
+    position: relative;
+    z-index: 2;
+}
+
+#rentBtt:after
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #FF9232;
+    transition: all .35s;
+}
+
+#rentBrr:hover
+{
+    color: white;
+}
+
+#rentBtt:hover:after
+{
+    height: 100%;
+}
+
+@media only screen and (max-width: 1050px)
+{
+    .container
+    {
+        top: 60px;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    .rent
+    {
+        width: 100%;
+    }
+
+    .typeText
+    {
+        display: none;
+    }
+
+    .browse
+    {
+        margin-top: 5px;
+        justify-content: flex-start;
+    }
+
+    .typeSelectors
+    {
+        display: none;
+    }
+
+    #tab1 tbody tr:last-of-type
+{
+    border-bottom: none;
+}
+    #tab1 thead
+    {
+        display: none;
+    }
+
+    #tab1, #tab1 tbody, #tab1 tr, #tab1 td
+    {
+        display: block;
+    }
+
+    #tab1 tr
+    {
+        margin-bottom: 15px;
+    }
+
+    #tab1 td
+    {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    #tab1 td::before
+    {
+        text-align: left;
+        color: #FF9232;
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}

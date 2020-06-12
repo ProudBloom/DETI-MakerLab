@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: TommySoft_BlackOutline;
+    src: url("../fonts/TommySoft/MADE Tommy Soft Black Outline.otf")
+}
+
+@font-face {
+    font-family: TommySoft_Black;
+    src: url("../fonts/TommySoft/MADE Tommy Soft Black.otf")
+}
+
+@font-face {
+    font-family: Tommy_Bold;
+    src: url("../fonts/Tommy/MADE TOMMY Bold.otf")
+}
+
+@font-face {
+    font-family: Tommy_Med_Outline;
+    src: url("../fonts/Tommy/MADE TOMMY Medium Outline.otf")
+}
+
+.topNavBar {
+    background: #1a1a1a;
+    height: 100px;
+    width: 100%;
+}
+
+.topNavBar input {
+    border-style: solid;
+    border: none;
+    float: right;
+    margin: 30px 20px 0px 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.navBarRight a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 40px 20px 40px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 150px;
+}
+
+.navBarLogoTop {
+    float: left;
+    color: #bfd37a;
+    text-align: center;
+    padding: 20px 20px 17px 20px;
+    text-decoration: none;
+    font-size: 50px;
+    font-family: TommySoft_Black;
+}
+
+
+.navBarRight a:hover {
+    background: #d0e6a6;
+    color: #1a1a1a;
+    font-weight: bold;
+    text-decoration: underline;
+}

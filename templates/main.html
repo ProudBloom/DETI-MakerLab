@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DETI MakerLab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/Style_Main.css' %}" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="{% static 'js/navbar.js' %}" defer></script>
+
+
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/Style_Main.css' %}">
+{% include 'navbar.html' %}
+
+
+
+{% block mainblock %}
+
+{% endblock %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css">    <!-- has to here or else it is replaced i think -->
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</body>
+</html>

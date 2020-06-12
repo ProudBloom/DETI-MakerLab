@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/Style_Statistics.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="./js/pieChart.js"></script>
+    <title>Statistics</title>
+</head>
+
+    <body>
+        <div class="topNavBar">
+            <a class="navBarLogoTop" href="./index.html">WIKI</a>
+            <a href="#" class="toggleButton">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <ul class="navBarRight">
+                <li class="mainItem"><a href="./technician.html">Staff</a>
+                    <ul>
+                        <li class="subItem"><a href="./requests.html">Requests</a></li>
+                        <li><a href="./edit_equipment.html">Edit equipment</a></li>
+                        <li><a href="./statistics.html">Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="mainItem"><a href="./student.html">Students</a>
+                    <ul>
+                        <li class="subItem"><a href="./rent_equipment.html">Rent</a></li>
+                        <li><a href="./return_equipment.html">Return</a></li>
+                        <li><a href="./create_project.html">Create Project</a></li>
+                        <li><a href="./my_projects.html">My Projects</a></li>
+                        <li><a href="./all_equipment.html">Database</a></li>
+                    </ul>
+                </li>
+                <li class="mainItem"><a href="./about.html">About</a>
+                    <ul>
+                        <li class="subItem"><a href="./team.html">Our Team</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul> 
+                </li>
+                <li><input type="text" placeholder="Search..."></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="dashboard">
+                <div class="dashboardText">
+                    <span>Dashboard</span>
+                </div>
+                <div class="topCharts">
+
+                    <div class="recentReqs">
+                        <p>Recent requests</p>
+                        <ul>
+                            <li>#Request1</li>
+                            <li>#Request2</li>
+                            <li>#Request3</li>
+                            <li>#Request4</li>
+                        </ul>
+                    </div>
+
+                    <div class="currentProj">
+                        <p>Current projects</p>
+                        <ul>
+                            <li>#Proj1</li>
+                            <li>#Proj2</li>
+                            <li>#Proj3</li>
+                        </ul>
+                    </div>
+
+                    <div class="componentStats">
+                        <p>Component stats</p>
+                        <div id="piechart"></div>
+                    </div>
+
+                </div>
+
+                <div class="bottomChart">
+                    <table class="statTable">
+                        <thead>
+                            <tr>
+                                <th>Column1</th>
+                                <th>Column2</th>
+                                <th>Column3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

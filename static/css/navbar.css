@@ -1,0 +1,243 @@
+@font-face
+{
+    font-family: TommySoft_BlackOutline;
+    src:url("../fonts/TommySoft/MADE Tommy Soft Black Outline.otf")
+}
+
+@font-face
+{
+    font-family: TommySoft_Black;
+    src:url("../fonts/TommySoft/MADE Tommy Soft Black.otf")
+}
+
+@font-face
+{
+    font-family: Tommy_Bold;
+    src:url("../fonts/Tommy/MADE TOMMY Bold.otf")
+}
+
+@font-face
+{
+    font-family: Tommy_Med_Outline;
+    src:url("../fonts/Tommy/MADE TOMMY Medium Outline.otf")
+}
+
+.topNavBar
+{
+    background:	#1a1a1a;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.topNavBar input
+{
+    border-style:solid;
+    border:none;
+    float: right;
+    margin: 30px 20px 0px 20px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.mainItem
+{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 25px;
+    margin-right: 30px;
+    padding-bottom: 20px;
+}
+
+.navBarRight
+{
+    float: right;
+    display: flex;
+}
+
+.toggleButton
+{
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1100;
+}
+
+.toggleButton .bar
+{
+    height: 3px;
+    width: 100%;
+    background-color: #bfd37a;
+    border-radius: 10px;
+}
+
+.navBarRight li
+{
+    text-decoration: none;
+    float: right;
+    width: 200px;
+    line-height: 45px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.navBarRight li a
+{
+    text-decoration: none;
+    color: white;
+    background-color: #1a1a1a;
+    display: block;
+    text-align: center;
+}
+
+.subItem
+{
+    margin-top: 30px;
+}
+
+.navBarRight li a:hover
+{
+    background-color: #bfd37a;
+}
+
+ul li ul li
+{
+    display: none;
+}
+
+ul li:hover ul li
+{
+    display: block;
+}
+
+.navBarLogoTop
+{
+    float: left;
+    color: #bfd37a;
+    text-align: center;
+    padding: 20px 20px 17px 20px;
+    text-decoration: none;
+    font-size: 50px;
+    font-family: TommySoft_Black;
+}
+
+.navBarLogoBottom
+{
+    float: left;
+    color: #bfd37a;
+    text-align: center;
+    padding: 0px 20px;
+    text-decoration: none;
+    font-size: 100px;
+    font-family: TommySoft_Black;
+    z-index: 10;
+    position: absolute;
+    top: 90px;
+}
+
+.navBarLogoBottom a
+{
+    color: #bfd37a;
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 1070px)
+{
+
+    .navBarLogoTop
+    {
+        margin-top: -15px;
+        font-size: 40px;
+        padding-bottom: 0px;
+    }
+
+    .navBarRight 
+    {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mainItem
+    {
+        margin: 12px 0px 0px 0px;
+        padding: 0px;
+        border-top: 1px solid #303030;
+    }
+
+    .mainItem a
+    {
+        text-decoration: underline;
+    }
+
+    .navBarRight li
+    {
+        margin: 0;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .toggleButton
+    {
+        top: 20px;
+        display: flex;
+    }
+
+    .topNavBar
+    {
+        flex-direction: column;
+        height: 60px;
+    }
+
+    ul li ul li
+    {
+        display: block;
+    }
+
+    ul li
+    {
+        width: 100%;
+        background-color: #1a1a1a;
+    }
+
+    .topNavBar input
+    {
+        margin: 10px 30px; 
+        text-align: center;
+        background-color: #1a1a1a;
+        border: 1px solid #303030;
+        color: white;
+    }
+
+    ul li ul li a
+    {
+        font-weight: normal;
+        font-size: 12px;
+    }
+
+    .navBarRight.active
+    {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 640px)
+{
+    .navBarLogoTop
+    {
+        font-size: 40px;
+    }
+    
+    .navBarRight
+    {
+        display: none;
+    }
+}

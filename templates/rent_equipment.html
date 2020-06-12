@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block mainblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Style_RequestEq.css' %}">
+    <script type="text/javascript" src="{% static 'js/fetchEquipment.js' %}" defer></script>
+    <div class="container">
+        <div class="rent">
+
+            <div class="typeText">
+                <h1>Select item type</h1>
+            </div>
+            
+            <div class="typeSelectors">
+                <a href="#tab1">Family 1</a>
+                <a href="#tab1" class="middle1">Family 2</a>
+                <a href="#tab1" class="middle2">Family 3</a>
+                <a href="#tab1">Family 4</a>
+            </div>
+
+            <div class="itemListText">
+                <h2>Select items for rent: </h2>
+            </div>
+
+            <div class="browse">
+                <input type="text" placeholder="Browse...">
+            </div>
+
+            <div class="itemList">
+                <table id="tab1">
+                    <thead>
+                        <tr>
+                            <th>Check</th>
+                            <th>#ID</th>
+                            <th>Family</th>
+                            <th>Description</th>
+                            <th>In Stock</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Check"><input type="checkbox"></td>
+                            <td data-label="#ID">data</td>
+                            <td data-label="Family">data</td>
+                            <td data-label="Desc">data</td>
+                            <td data-label="Stock">data</td>
+                            <td data-label="Status">data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="buttonDiv">
+                <button id="rentBtt"><span>RENT</span></button>
+            </div>
+            
+        </div>
+
+{% endblock %}

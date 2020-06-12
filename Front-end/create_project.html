@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/Style_Createproject.css"/>
+        <link rel="stylesheet" href="./css/navbar.css">
+        <script src="./js/navbar.js" defer></script>
+        <script src="./js/createProject.js"></script>
+        <title>Create Project - MakerLab</title>
+</head>
+<body>
+    <div class="topNavBar">
+        <a class="navBarLogoTop" href="./index.html">WIKI</a>
+        <a href="#" class="toggleButton">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul class="navBarRight">
+            <li class="mainItem"><a href="./technician.html">Staff</a>
+                <ul>
+                    <li class="subItem"><a href="./requests.html">Requests</a></li>
+                    <li><a href="./edit_equipment.html">Edit equipment</a></li>
+                    <li><a href="./statistics.html">Statistics</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="./student.html">Students</a>
+                <ul>
+                    <li class="subItem"><a href="./rent_equipment.html">Rent</a></li>
+                    <li><a href="./return_equipment.html">Return</a></li>
+                    <li><a href="./create_project.html">Create Project</a></li>
+                    <li><a href="./my_projects.html">My Projects</a></li>
+                    <li><a href="./all_equipment.html">Database</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="./about.html">About</a>
+                <ul>
+                    <li class="subItem"><a href="./team.html">Our Team</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul> 
+            </li>
+            <li><input type="text" placeholder="Search..."></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="cr_project">
+            <p id="projectTitle">CREATE NEW PROJECT</p>
+            <form class="project_form" name="myForm">
+                <label for="project_name" class="project_input_label">Project name: </label>
+                <input type="text" class="project_input" id="project_name" name="project_name" placeholder="Project name" required>
+                <label for="supervisor_name" class="project_input_label">Supervisor: </label>
+                <input type="email" class="project_input" id="supervisor_name" name="supervisor_name" placeholder="Supervisor e-mail" pattern=".+@ua.pt" title="Use UA e-mail!" required>
+                <legend class="project_input_label">Number of team members:</legend>
+                <select id="no_team_members" onchange="change()" required>
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <div id="names">
+                </div>
+                <input type="submit" value="Submit" id="submitBtn">
+              </form>
+        </div>
+    </div>
+</body>

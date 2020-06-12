@@ -1,0 +1,30 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.PhotoTop
+{
+    position: absolute;
+}
+
+.PhotoTop img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.about
+{
+    padding: 50px;
+    font-size: 20px;
+    color: black;
+    width: 30%;
+    height: 45%;
+    background-color: #C0C0C0;
+    opacity: 0.85;
+    position: absolute;
+    line-height: 35px;
+}

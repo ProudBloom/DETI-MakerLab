@@ -1,0 +1,33 @@
+    <div class="topNavBar">
+        <a class="navBarLogoTop" href="/wiki">WIKI</a>
+        <a href="#" class="toggleButton">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul class="navBarRight">
+            <li class="mainItem"><a href="{% url 'technician' %}">Staff</a>
+                <ul>
+                    <li class="subItem"><a href="{% url 'requests' %}">Requests</a></li>
+                    <li><a href="{% url 'edit_equipment' %}">Edit equipment</a></li>
+                    <li><a href="{% url 'statistics' %}">Statistics</a></li>
+                    <li><a href="tech/admin">Administration</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="{% url 'student' %}">Students</a>
+                <ul>
+                    <li class="subItem"><a href="{% url 'rent_equipment' %}">Rent</a></li>
+                    <li><a href="{% url 'return_equipment' %}">Return</a></li>
+                    <li><a href="{% url 'create_project' %}">Create Project</a></li>
+                    <li><a href="{% url 'my_projects' %}">My Projects</a></li>
+                    <li><a href="{% url 'my_projects' %}">Wiki</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="{% url 'about' %}">About</a>
+                <ul>
+                    <li class="subItem"><a href="{% url 'team' %}">Our Team</a></li>
+                </ul> 
+            </li>
+            <li><input type="text" placeholder="Search..."></li>
+        </ul>
+    </div>

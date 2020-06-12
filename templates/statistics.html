@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block mainblock %}
+    <link rel="stylesheet" href="{% static 'css/Style_Statistics1.css' %}" type="text/css">
+    <script type="text/javascript" src="{% static 'js/loader.js' %}" defer></script> <!-- has to be first or else google variable will not be recognized -->
+    <script src="{% static 'js/stats.js' %}" defer></script>
+    <script src="{% static 'js/pieChart.js' %}" defer></script>
+
+        <div class="container">
+            <div class="dashboard">
+                <div class="dashboardText">
+                    <span>Dashboard</span>
+                </div>
+                <div class="topCharts">
+
+                    <div class="recentReqs">
+                        <p>Recent requests</p>
+                        <ul>
+                            <li>#Request1</li>
+                            <li>#Request2</li>
+                            <li>#Request3</li>
+                            <li>#Request4</li>
+                        </ul>
+                    </div>
+
+                    <div class="currentProj">
+                        <p>Current projects</p>
+                        <ul>
+                            <li>#Proj1</li>
+                            <li>#Proj2</li>
+                            <li>#Proj3</li>
+                        </ul>
+                    </div>
+
+                    <div class="componentStats">
+                        <p>Component stats</p>
+                        <div id="piechart"></div>
+                    </div>
+
+                </div>
+
+                <div class="separator">
+                    
+                </div>
+
+                <div class="bottomChart">
+                    <p>Most popular equipments</p>
+                    <table class="statTable">
+                        <thead>
+                            <tr>
+                                <th>Family</th>
+                                <th>Description</th>
+                                <th>No. of requests</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td>Content</td>
+                                <td>Content</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

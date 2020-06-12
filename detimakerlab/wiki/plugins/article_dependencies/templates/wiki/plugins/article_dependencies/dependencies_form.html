@@ -1,0 +1,97 @@
+{% load i18n wiki_tags wiki_images_tags humanize wiki_thumbnails sekizai_tags static %}
+
+<h4>{% trans "Equipment" %}</h4>
+{% csrf_token %}
+{% addtoblock "js" %}
+    <script type="text/javascript">
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+    function submit_form(form) {
+            let x = form.elements.namedItem('id_project');
+            let y = form.getElementById('id_project');
+            console.log(y);
+            console.log(x);
+            let request = new XMLHttpRequest();
+            console.log(getCookie('csrftoken'));
+            let url = new URL('http://127.0.0.1:8000/tech/requests/');
+            let params = 'equipment_ref=1&project_ref=1'; {# TODO: Get params from form#}
+            request.open("POST", url, true);
+            request.withCredentials = true;
+            request.responseType = 'json';
+            request.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(params);
+            request.onload = () => {
+                if (request.status === 201) {
+                    alert("We send a request to book equipment: " + request.response.equipment_ref);
+                } else {
+                    alert("Sorry, we couldn't process your request")
+                    console.log('DEU PAU');
+                    console.log(request.status, request.statusText)
+                }
+            }
+        }
+
+    function createNode(element) {
+            return document.createElement(element);
+        }
+
+    function append(parent, el) {
+        return parent.appendChild(el);
+    }
+
+    function fetch_data() {
+            const ul = document.getElementById('project');
+            fetch('http://127.0.0.1:8000/tech/projects?format=json')
+                .then((response) => response.json())
+                .then(function(data) {
+                    let projects = data;
+                    console.log(data)
+                    return projects.map(function(project) {
+                        console.log(`${project.equipment}`);
+                        fetch_data2(1)
+                    })
+                }).catch(function (error) {
+                    console.log(error)
+            })
+    }
+
+    function fetch_data2(equipment_ref) {
+            const ul = document.getElementById('project');
+            let url = 'http://127.0.0.1:8000/tech/equipments/'+equipment_ref+'?format=json';
+            console.log(url);
+            fetch(url)
+                .then((response) => response.json())
+                .then(function(data) {
+                    let equipment = data;
+                    console.log(equipment)
+                    let li = createNode('li'),
+                        span = createNode('span');
+                    span.innerHTML = `${equipment.description}`;
+                    append(li, span);
+                    append(ul, li);
+                })
+    }
+
+    </script>
+{% endaddtoblock %}
+
+            <ul id="project"></ul>
+            <button type="button" onClick="location.href='/rent_equipment'" name="{{ plugin.slug }}_save" value="1"
+                        class="btn btn-secondary btn-md">
+                    <span class="fa fa-upload"></span>
+                    {% trans "Request equipment" %}
+            </button>

@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/navbar.css">
+        <link rel="stylesheet" href="./css/Style_MyProjects.css"/>
+        
+        <script src="./js/navbar.js" defer></script>
+        <title>My projects - MakerLab</title>
+</head>
+<body>
+    <div class="topNavBar">
+        <a class="navBarLogoTop" href="./index.html">WIKI</a>
+        <a href="#" class="toggleButton">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul class="navBarRight">
+            <li class="mainItem"><a href="./technician.html">Staff</a>
+                <ul>
+                    <li class="subItem"><a href="./requests.html">Requests</a></li>
+                    <li><a href="./edit_equipment.html">Edit equipment</a></li>
+                    <li><a href="./statistics.html">Statistics</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="./student.html">Students</a>
+                <ul>
+                    <li class="subItem"><a href="./rent_equipment.html">Rent</a></li>
+                    <li><a href="./return_equipment.html">Return</a></li>
+                    <li><a href="./create_project.html">Create Project</a></li>
+                    <li><a href="./my_projects.html">My Projects</a></li>
+                    <li><a href="./all_equipment.html">Database</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="./about.html">About</a>
+                <ul>
+                    <li class="subItem"><a href="./team.html">Our Team</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul> 
+            </li>
+            <li><input type="text" placeholder="Search..."></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="my_projects">
+            <div class="my_project_title">
+                <p>My projects:</p>
+            </div>
+                
+        <div class="projectList">
+            <table id="table1">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Project Name</th>
+                        <th>Supervisor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Number">1</td>
+                        <td data-label="Project Name"><a href="#">Project 1</a></td>
+                        <td data-label="Supervisor">Professor 1</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Number">2</td>
+                        <td data-label="Project Name"><a href="#">Project 2</a></td>
+                        <td data-label="Supervisor">Professor 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>

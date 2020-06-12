@@ -1,0 +1,169 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#projectTitle{
+    text-align: center;
+}
+
+.cr_project
+{
+    font-family: TommySoft_Black;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    width: 75%;
+}
+
+.project_form{
+    width: 500px;
+    margin: 2rem auto;
+    border: 2px solid #bfd37a;
+    padding: 2rem;
+}
+
+.project_input{
+    display: block;
+    width: 100%;
+    color: black;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+    font-size: 15px;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    border: 0;
+    
+}
+
+.project_input_label{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+#no_team_members
+{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    padding: 10px 50px 10px 10px;
+    margin: 10px 0px 10px 0px;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    width: 30%;
+}
+
+#submitBtn{
+    border: 0;
+    padding: .5rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid #bfd37a;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
+    transition: all .2s;
+}
+
+#submitBtn:after
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #bfd37a;
+    transition: all .35s;
+}
+
+#submitBtn:hover
+{
+    color: white;
+}
+
+#submitBtn:hover:after
+{
+    height: 100%;
+}
+
+
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+    height: 850px;
+}
+
+@media (min-width: 1701px)
+{
+    .cr_project
+    {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1700px)
+{
+    .cr_project{
+        font-size: 40px;
+        
+    }
+    .project_input_label
+    {
+        font-size: 25px;
+    }
+} 
+
+@media (max-width: 1050px)
+{
+    .container{
+        top: 60px;
+    }
+    .cr_project
+    {
+        font-size: 30px;
+    }
+
+    .project_input_label
+    {
+        font-size: 25px;
+    }
+    .project_form{
+        width: 350px;
+        
+    }
+} 
+
+@media (max-width: 640px)
+{
+    .cr_project
+    {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .project_input_label
+    {
+        font-size: 20px;
+    }
+
+    .project_form{
+        width: 60%;
+        
+    }
+}

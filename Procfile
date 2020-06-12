@@ -1,0 +1,1 @@
+web: gunicorn detimakerlab.wsgi --log-file -

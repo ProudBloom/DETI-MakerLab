@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block mainblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/Style_AboutMain.css' %}">
+
+    <div class="container">
+        <div class="text">
+            <img src="{% static 'img/Makerlab_About.jpg' %}">
+            <h2>What is MakerLab?</h2>
+            <p>
+                MakerLab is a IoT laboratory for the students and professors among all the University of Aveiro.
+            </p>
+            <p class="second_paragraph">
+                It is located at the Department of Electronics, Telecommunication and Informatics.
+            </p>
+            <p style="margin-top: 40px;">
+                Every student can rent any equipment from there. Each electronic device or even circuit parts can be requested.
+            </p>
+        </div>
+        
+        <div class="text" id="project">
+            <img src="{% static 'img/Project_About.jpg' %}">
+            <h2>Project & team</h2>
+            <p>
+                The aim of this project is to make the use of MakerLab easier. Thanks to the web application, managing, renting and browsing 
+                through the equipment of the lab will become much easier and convenient both for students and the technician who administrates the whole facitily.
+            </p>
+            <p class="second_paragraph">
+                To meet team members and the supervisor, please visit <a href="{% url 'team' %}">Our team</a> section.
+            </p>
+        </div>
+    
+        <div class="text" id="wiki">
+            <img src="{% static 'img/Wiki_About.jpg' %}">
+            <h2>About Wiki</h2>
+            <p>
+                Now students can browse through the WIKI implemented specially for the convenience. Users will be able to easily browse throught equipments and their details. 
+            </p>
+            <p class="second_paragraph">
+                WIKI page can be found here: <a href="#">wiki</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

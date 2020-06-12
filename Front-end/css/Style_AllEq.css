@@ -1,0 +1,58 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.photoTop
+{
+    position: relative;
+    display: flex; 
+    width: 100%;
+}
+
+.eq_database
+{
+    margin-left: 25%;
+    top: 120px;
+    font-family: TommySoft_Black;
+    background-color: 	#F5F5F5	;
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    text-align: center;
+    line-height: 180%;
+}
+
+@media (min-width: 1701px)
+{
+    .eq_database
+    {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1700px)
+{
+    .eq_database
+    {
+        font-size: 40px;
+    }
+} 
+
+@media (max-width: 1200px)
+{
+    .eq_database
+    {
+        font-size: 30px;
+    }
+} 
+
+@media (max-width: 640px)
+{
+    .eq_database
+    {
+        font-size: 20px;
+    }
+}

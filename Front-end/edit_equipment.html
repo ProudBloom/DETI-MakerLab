@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/Style_EditEquipment.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="./js/navbar.js" defer></script>
+    <script src="./js/editEquipment.js"></script>
+    <title>Edit equipment - MakerLab</title>
+</head>
+<body>
+    <div class="topNavBar">
+        <a class="navBarLogoTop" href="./index.html">WIKI</a>
+        <a href="#" class="toggleButton">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul class="navBarRight">
+            <li class="mainItem"><a href="./technician.html">Staff</a>
+                <ul>
+                    <li class="subItem"><a href="./requests.html">Requests</a></li>
+                    <li><a href="./edit_equipment.html">Edit equipment</a></li>
+                    <li><a href="./statistics.html">Statistics</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="./student.html">Students</a>
+                <ul>
+                    <li class="subItem"><a href="./rent_equipment.html">Rent</a></li>
+                    <li><a href="./return_equipment.html">Return</a></li>
+                    <li><a href="./create_project.html">Create Project</a></li>
+                    <li><a href="./my_projects.html">My Projects</a></li>
+                    <li><a href="./all_equipment.html">Database</a></li>
+                </ul>
+            </li>
+            <li class="mainItem"><a href="./about.html">About</a>
+                <ul>
+                    <li class="subItem"><a href="./team.html">Our Team</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul> 
+            </li>
+            <li><input type="text" placeholder="Search..."></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="container_top">
+            <nav class="top">
+                <ul class="nav_list">
+                    <li><a href="#add_equipment" class="left">Add equipment</a></li>
+                    <li><a href="#edit_equipment" class="right">Edit equipment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="add_equipment">
+            <h2>Add equipment</h2>
+            <form id="add_equipment_form">
+            
+                    <label for="equipment_family" class="equipment_input_label">Equipment family: </label>
+                    <input type="text" class="equipment_input" id="equipment_family" name="equipment_family" placeholder="Equipment family" required>
+                    <label for="equipment_description" class="equipment_input_label">Equipment description: </label>
+                    <input type="text" class="equipment_input" id="equipment_description" name="equipment_description" placeholder="Equipment description" required>
+                    <label for="equipment_location" class="equipment_input_label">Equipment location: </label>
+                    <input type="text" class="equipment_input" id="equipment_location" name="equipment_location" placeholder="Equipment location" required>
+                    <label for="price" class="equipment_input_label">Price: </label>
+                    <input type="number" class="equipment_input" id="price" name="price" placeholder="Price €" required>
+                    <label for="quantity" class="equipment_input_label">Quantity: </label>
+                    <input type="number" class="equipment_input" id="quantity" name="quantity" placeholder="Quantity" required>
+                    
+                
+                    <input type="submit" value="Add Equipment" id="submitBtn">
+            </form>
+        </section>
+        
+        <section id="edit_equipment">
+            <div class="itemListText">
+                <h2>Edit equipment</h2>
+            </div>
+
+            <div class="browse">
+                <input type="text" placeholder="Browse...">
+            </div>
+
+            <div class="itemList">
+                <table id="tab1">
+                    <thead>
+                        <tr>
+                            
+                            <th>#ID</th>
+                            <th>Family</th>
+                            <th>Description</th>
+                            <th>In Stock</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="#ID">1</td>
+                            <td data-label="Family">Asus</td>
+                            <td data-label="Desc">Motherboard</td>
+                            <td data-label="Stock">10</td>
+                            <td data-label="Status">Intact</td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\edit-tools.png" width="20px" height="20px"></a></td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\rubbish-can.png" width="20px" height="20px"></a></td>
+                        </tr>
+                        <tr>
+                           
+                            <td data-label="#ID">2</td>
+                            <td data-label="Family">Arduino</td>
+                            <td data-label="Desc">Microchip</td>
+                            <td data-label="Stock">2</td>
+                          
+                            <td data-label="Status">Broken</td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\edit-tools.png" width="20px" height="20px"></a></td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\rubbish-can.png" width="20px" height="20px"></a></td>
+                        </tr>
+                        <tr>
+                            
+                            <td data-label="#ID">3</td>
+                            <td data-label="Family">Arduino</td>
+                            <td data-label="Desc">Movement sensor</td>
+                            <td data-label="Stock">12</td>
+                            
+                            <td data-label="Status">Intact</td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\edit-tools.png" width="20px" height="20px"></a></td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\rubbish-can.png" width="20px" height="20px"></a></td>
+                        </tr>
+                        <tr>
+                            
+                            <td data-label="#ID">4</td>
+                            <td data-label="Family">Raspberry PI</td>
+                            <td data-label="Desc">Microchip</td>
+                            <td data-label="Stock">7</td>
+                            
+                            <td data-label="Status">Intact</td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\edit-tools.png" width="20px" height="20px"></a></td>
+                            <td data-label="Edit"><a href="#ID"><img src=".\img\rubbish-can.png" width="20px" height="20px"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</body>

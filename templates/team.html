@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block mainblock %}
+    <link rel="stylesheet" href="{% static 'css/Style_Team.css' %}" type="text/css">
+    <script src="{% static 'js/pieChart.js' %}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <div class="container">
+            <div class="people">
+                <div class="person">
+                    <img src="{% static 'img/SomeDude1.jpg' %}" alt="Some dude"/>
+                    <div class="info_l">
+                        <span>Name and Surname Here</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor repellat sapiente blanditiis veniam aspernatur repudiandae neque voluptas. 
+                         Ducimus dolorem, animi, dicta voluptatum minima at voluptate vel, obcaecati itaque dignissimos dolorum.</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <div class="info_r">
+                        <span>Name and Surname Here</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor repellat sapiente blanditiis veniam aspernatur repudiandae neque voluptas. 
+                         Ducimus dolorem, animi, dicta voluptatum minima at voluptate vel, obcaecati itaque dignissimos dolorum.</p>
+                    </div>
+                    <img src="{% static 'img/Somedude2.jpg' %}" alt="Some dude"/>
+                </div>
+                <div class="person">
+                    <img src="{% static 'img/SomeGurl1.jpg' %}" alt="Some gurl"/>
+                    <div class="info_l">
+                        <span>Name and Surname Here</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor repellat sapiente blanditiis veniam aspernatur repudiandae neque voluptas. 
+                         Ducimus dolorem, animi, dicta voluptatum minima at voluptate vel, obcaecati itaque dignissimos dolorum.</p>
+                    </div>
+                </div>
+                <div class="person">
+                    <div class="info_r">
+                        <span>Name and Surname Here</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor repellat sapiente blanditiis veniam aspernatur repudiandae neque voluptas. 
+                         Ducimus dolorem, animi, dicta voluptatum minima at voluptate vel, obcaecati itaque dignissimos dolorum.</p>
+                    </div>
+                    <img src="{% static 'img/SomeGurl2.jpg' %}" alt="Some gurl"/>
+                </div>
+                <div class="person">
+                    <img src="{% static 'img/SomeGurl3.jpg' %}" alt="Some gurl"/>
+                    <div class="info_l">
+                        <span>Name and Surname Here</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor repellat sapiente blanditiis veniam aspernatur repudiandae neque voluptas. 
+                         Ducimus dolorem, animi, dicta voluptatum minima at voluptate vel, obcaecati itaque dignissimos dolorum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

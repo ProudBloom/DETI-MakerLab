@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/Style_Student.css">
+        <link rel="stylesheet" href="./css/navbar.css">
+        <script src="./js/navbar.js" defer></script>
+        <title>Student - MakerLab</title>
+    </head>
+
+    <body>
+        <div class="topNavBar">
+            <a class="navBarLogoTop" href="./index.html">WIKI</a>
+            <a href="#" class="toggleButton">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <ul class="navBarRight">
+                <li class="mainItem"><a href="./technician.html">Staff</a>
+                    <ul>
+                        <li class="subItem"><a href="./requests.html">Requests</a></li>
+                        <li><a href="./edit_equipment.html">Edit equipment</a></li>
+                        <li><a href="./statistics.html">Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="mainItem"><a href="./student.html">Students</a>
+                    <ul>
+                        <li class="subItem"><a href="./rent_equipment.html">Rent</a></li>
+                        <li><a href="./return_equipment.html">Return</a></li>
+                        <li><a href="./create_project.html">Create Project</a></li>
+                        <li><a href="./my_projects.html">My Projects</a></li>
+                        <li><a href="./all_equipment.html">Database</a></li>
+                    </ul>
+                </li>
+                <li class="mainItem"><a href="./about.html">About</a>
+                    <ul>
+                        <li class="subItem"><a href="./team.html">Our Team</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul> 
+                </li>
+                <li><input type="text" placeholder="Search..."></li>
+            </ul>
+        </div>      
+        
+        <div class="container">
+            <a href="rent_equipment.html" class="box" id="one" style="background: url('img/computer_green.png');">RENT EQUIPMENT</a>
+            <a href="return_equipment.html" class="box" id="two" style="background: url('img/arduino_green.png');">RETURN EQUIPMENT</a>
+        </div>
+        <div class="container2">
+            <a href="create_project.html" class="box" id="four" style="background: url('img/board_green.png');">CREATE PROJECT</a>
+            <a href="./my_projects.html" class="box" id="three" style="background: url('img/it_eq_green.png'); background-size: contain;">MY PROJECTS</a>
+            <a href="all_equipment.html" class="box" id="five" style="background: url('img/db_green.png');">EQUIPMENT DATABASE</a>
+        </div>
+    </body>

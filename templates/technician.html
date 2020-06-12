@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block mainblock %}
+    <link rel="stylesheet" href="{% static 'css/Style_Technician.css' %}" type="text/css">
+
+        
+        <div class="container">
+            <a href="{% url 'requests' %}" class="box" id="one" style="background: url({% static 'img/Requests.png' %}); background-size: cover;">REQUESTS</a>
+            <a href="{% url 'edit_equipment' %}" class="box" id="two" style="background: url({% static 'img/Edit.png' %}); background-size: cover;">EDIT EQUIPMENT</a>
+            <a href="{% url 'statistics' %}" class="box" id="three" style="background: url({% static 'img/Stats.png' %}); background-size: cover;">STATISTICS</a>
+        </div>
+
+{% endblock %}

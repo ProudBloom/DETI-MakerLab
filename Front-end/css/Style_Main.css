@@ -1,0 +1,94 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.PhotoTop
+{
+    position: absolute;
+}
+
+.PhotoTop img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.paragraphs
+{
+    top: 400px;
+    position: absolute;
+    width: 100%;
+    background-color: #13434d;
+    z-index: 10;
+    opacity: 60%;
+}
+
+.paragraphs p
+{
+    font-family: Tommy_Bold;
+    font-size: 20px;
+    color:whitesmoke;
+    margin: 20px 40px;
+    text-align: right;
+}
+
+.paragraphs a
+{
+    color: #bfd37a;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Tommy_Bold;
+}
+
+/* PC, windowed */
+@media only screen and (max-width: 1700px)
+{
+    .paragraphs
+    {
+        top: 260px;
+    }
+}
+
+/* Tablet */
+@media only screen and (max-width: 1050px)
+{
+    .navBarLogoBottom
+    {
+        font-size: 70px;
+    }
+
+    .paragraphs
+    {
+        top: 95%;
+        opacity: 1;
+        background-color: #bfd37a;
+    }
+
+    .paragraphs a
+    {
+        color: #13434d;
+    }
+}
+
+/* Phone - implement hamburger func */
+@media only screen and (max-width: 640px)
+{
+    .navBarLogoBottom
+    {
+        font-size: 50px;
+    }
+
+    .paragraphs
+    {
+        opacity: 100%;
+        top: 242px;
+    }
+    
+    .paragraphs p
+    {
+        font-size: 12px;
+    }
+}

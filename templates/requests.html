@@ -1,0 +1,71 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block mainblock %}
+    <link rel="stylesheet" href="{% static 'css/Style_Admin_Requests.css' %}" type="text/css">
+    <script src="{% static 'js/tableSort.js' %}" defer> </script>
+    <script src="{% static 'js/fetchRequests.js' %}" defer> </script>
+
+    <div class="container">
+        <div class="requests">
+
+            <div class="pendingRequestsText">
+                <h2>Pending requests for equipment</h2>
+            </div>
+
+            <div class="itemList">
+                <table id="tab1" class="table-sortable">
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Equipment</th>
+                            <th>Project</th>
+                            <th>Date</th>
+                            <th>Deny/Accept</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>data</td>
+                            <td>
+                                <button class="acceptReq">&#10003</button>
+                                <button class="denyReq">&#10008</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+                <div class="requestHistoryText">
+                    <h2>Request history</h2>
+                </div>
+            </div>
+
+            <table id="tab2" class="table-sortable">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>Equipment</th>
+                        <th>Project</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>data</td>
+                        <td>data</td>
+                        <td>data</td>
+                        <td>data</td>
+                        <td>data</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

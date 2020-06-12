@@ -1,0 +1,90 @@
+{% load wiki_tags i18n cache sekizai_tags static %}
+
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{% static "wiki/js/article.js" %}"></script>{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script type="text/javascript">
+
+        function createNode(element) {
+            return document.createElement(element);
+        }
+
+        function append(parent, el) {
+            return parent.appendChild(el);
+        }
+
+        function fetch_equipment() {
+                console.log("fetch loaded")
+                const ul = document.getElementById('equipment');
+                fetch('http://127.0.0.1:8000/tech/equipments?format=json')
+                    .then((response) => response.json())
+                    .then(function(data) {
+                        let equipments = data;
+                        console.log(equipments)
+                        return equipments.map(function(equipment) {
+                            console.log(equipment)
+                            let li = createNode('li'),
+                                span = createNode('span');
+                            span.innerHTML = `${equipment.description}`;
+                            append(li, span);
+                            append(ul, li);
+                                })
+                    }).catch(function (error) {
+                        console.log(error)
+                })
+        }
+
+        function fetch_projects() {
+                console.log("fetch loaded")
+                const ul = document.getElementById('project');
+                fetch('http://127.0.0.1:8000/tech/projects?format=json')
+                    .then((response) => response.json())
+                    .then(function(data) {
+                        let projects = data;
+                        console.log(projects)
+                        return projects.map(function(project) {
+                            console.log(project)
+                            let li = createNode('li'),
+                                span = createNode('span');
+                            span.innerHTML = `${project.short_name}`;
+                            append(li, span);
+                            append(ul, li);
+                                })
+                    }).catch(function (error) {
+                        console.log(error)
+                })
+        }
+        window.onload = fetch_projects()
+        window.onload = fetch_equipment()
+    </script>
+{% endaddtoblock %}
+
+{#The contents of article are displayed here#}
+<div class="wiki-article">
+    {{ content|default:"" }}
+    {% if article.current_revision.title == "Projects" %}
+        <ul id="project"></ul>
+    {% elif article.current_revision.title == "Equipment"%}
+        <ul id="equipment"></ul>
+    {% else %}
+        This article is associated with: {{ article.project|default:"" }}
+    {% endif %}
+</div>
+
+{% for plugin in plugins %}
+    {% if plugin.RenderMedia.css %}
+        {% addtoblock "css" %}
+            {% for media, url in plugin.RenderMedia.css.items %}
+                <link rel="stylesheet" href="{% static url %}"/>
+            {% endfor %}
+        {% endaddtoblock %}
+    {% endif %}
+    {% if plugin.RenderMedia.js %}
+        {% addtoblock "js" %}
+            {% for url in plugin.RenderMedia.js %}
+                <script type="text/javascript" src="{% static url %}"></script>
+            {% endfor %}
+        {% endaddtoblock %}
+    {% endif %}
+{% endfor %}

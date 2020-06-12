@@ -1,0 +1,162 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navBarLogoTop
+{
+    color: #862a5c;
+}
+
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+    height: 720px;
+}
+
+.my_project_title{
+    padding: 20px;
+}
+
+
+
+.my_projects
+{
+    
+    background-color: #f1f1f1;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    font-size: 24px;
+}
+
+.projectList{
+    display: flex;
+    justify-content: center;
+}
+
+#table1
+{
+    border-collapse: collapse;
+    margin: 0px 5px 0px;
+    font-size: 15px;
+    min-width: 400px;
+    width: 95%;
+    justify-self: center;
+}
+
+
+#table1 thead tr
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #862a5c;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+}
+
+#table1 th, #table1 td
+{
+    padding: 12px 15px;
+}
+
+#table1 tbody tr
+{
+    border-bottom: 1px solid #dddddd;
+}
+
+#table1 tbody tr:nth-last-of-type(even)
+{
+    background-color: #e6e6e6;
+}
+
+#table1 tbody tr:last-of-type
+{
+    border-bottom: 2px solid #862a5c;
+}
+
+
+@media only screen and (max-width: 1050px)
+{
+    .container
+    {
+        top: 60px;
+    }
+
+    .toggleButton .bar
+    {
+    background-color: #862a5c;
+    }
+
+    .navBarRight li a:hover{
+        background-color: #862a5c;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    .my_projects
+    {
+        width: 100%;
+    }
+
+
+    #table1 tbody tr:last-of-type
+    {
+    border-bottom: none;
+    }
+    #table1 thead
+    {
+        display: none;
+    }
+
+    #table1, #table1 tbody, #table1 tr, #table1 td
+    {
+        display: block;
+    }
+
+    #table1 tr
+    {
+        margin-bottom: 15px;
+    }
+
+    #table1 td
+    {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    #table1 td::before
+    {
+        text-align: left;
+        color: #862a5c;
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .toggleButton .bar
+    {
+    background-color: #862a5c;
+    }
+
+    .navBarRight li a:hover{
+        background-color: #862a5c;
+    }
+}

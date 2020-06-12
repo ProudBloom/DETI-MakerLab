@@ -1,0 +1,229 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+}
+
+.dashboard
+{
+    background-color: #f1f1f1;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+}
+
+.dashboardText
+{
+    margin: 50px;
+}
+
+.dashboardText span
+{
+    font-size: 40px;
+    font-weight: 900;
+    color: #9DE0AD;
+}
+
+.topCharts
+{
+    margin-bottom: 50px;
+    width:100%;
+    height: 270px;
+}
+
+.recentReqs
+{
+    float:left;
+    background: #f1f1f1;
+    width: 25%;
+    height: 100%;
+    margin: 30px 30px 30px 50px;
+    box-shadow: 10px 10px 25px #cccccc;
+}
+
+.recentReqs p
+{
+    color: #9DE0AD;
+    font-style: oblique;
+    font-weight: 700;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.recentReqs ul
+{
+    padding: 0px 15px 15px 15px;
+    text-align: center;
+}
+
+.recentReqs ul li
+{
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.recentReqs ul li:nth-child(even)
+{
+    background-color: #9DE0AD;
+}
+
+.recentReqs ul li:nth-child(odd)
+{
+    background-color: #d7f2de;
+}
+
+.currentProj
+{
+    display: inline-block;
+    margin:0 auto;
+    background: #f1f1f1;
+    width: 25%;
+    height: 100%;
+    margin: 30px 80px;
+    box-shadow: 10px 10px 25px #cccccc;
+}
+
+.currentProj p
+{
+    color: #45ADA8;
+    font-style: oblique;
+    font-weight: 700;
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.currentProj ul
+{
+    padding: 15px;
+    text-align: center;
+}
+
+.currentProj ul li
+{
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.currentProj ul li:nth-child(even)
+{
+    background-color: #45ADA8;
+}
+
+.currentProj ul li:nth-child(odd)
+{
+    background-color: #b4dedc;
+}
+
+.moreProjects
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: #594f4f;
+    padding-top: 30px;
+}
+
+.componentStats
+{
+    float:right;
+    background: #f1f1f1;
+    width: 25%;
+    height: 100%;
+    margin: 30px 50px 30px 30px;
+    box-shadow: 10px 10px 25px #cccccc;
+}
+
+.componentStats p
+{
+    color: #269db4;
+    font-style: oblique;
+    font-weight: 700;
+    padding: 15px 15px 0px 15px;
+    font-size: 15px;
+    text-align: right;
+}
+
+.componentStats #piechart
+{
+    width: 100%;
+    height: 100%;
+}
+
+.separator
+{
+    width: 100%;
+    height: 120px;
+}
+
+.bottomChart
+{
+    margin-top: 150px;
+    width: 93%;
+    display: flex;
+    justify-content: center;
+    height: 360px;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 40px;
+    margin: 50px 50px;
+    box-shadow: 20px 20px 90px #cccccc;
+}
+
+.bottomChart p
+{
+    color: #c72c41;
+    font-style: oblique;
+    font-weight: 700;
+    padding: 15px 15px 30px 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.bottomChart table
+{
+    width: 80%;
+    border-radius: 10px;
+}
+
+table thead
+{
+    background-color: #c72c41;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th, table td
+{
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+table th
+{
+    border-radius: 10px;
+}
+
+table tbody tr:nth-child(even)
+{
+    background-color: #eebfc6;
+}
+
+table tbody tr:nth-child(odd)
+{
+    background-color: #f3d4d9;
+}

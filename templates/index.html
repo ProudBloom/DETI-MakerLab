@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block mainblock %}
+    <link rel="stylesheet" href="{% static 'css/Style_Main.css' %}" type="text/css">
+
+    <div class="PhotoTop">
+        <img src="{% static 'img/BackgroundMainCropped.png' %}" alt="Desaturated UA photo 1920x1080">
+
+        <div class="paragraphs">
+            <p class="p1">In order to fully experience the MakerLab web application user need to be logged-in.</p>
+            <p class="p2">To log-in enter the <a href="#">login</a> section, after that you will be redirecetd to the UA
+                authentication site.</p>
+            <p class="p3">User can be logged in as the student or a staff member. Functions differs depending on the
+                account.</p>
+            <p class="p4">To see more information visit the <a href="{% url 'about' %}">about</a> section.</p>
+        </div>
+    </div>
+
+    <div class="navBarLogoBottom">
+        <p><a href="{% url 'homepage' %}">MAKERLAB</a></p>
+    </div>
+{% endblock %}
