@@ -5,11 +5,6 @@
     list-style: none;
 }
 
-.navBarLogoTop
-{
-    color: #862a5c;
-}
-
 .container
 {
     font-family: Helvetica, sans-serif;
@@ -24,8 +19,6 @@
 .my_project_title{
     padding: 20px;
 }
-
-
 
 .my_projects
 {
@@ -56,7 +49,7 @@
 #table1 thead tr
 {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #862a5c;
+    background-color: #006a4e;
     color: white;
     text-align: left;
     font-weight: bold;
@@ -83,7 +76,7 @@ a{
 
 #table1 tbody tr:last-of-type
 {
-    border-bottom: 2px solid #862a5c;
+    border-bottom: 2px solid #006a4e;
 }
 
 
@@ -96,11 +89,11 @@ a{
 
     .toggleButton .bar
     {
-    background-color: #862a5c;
+    background-color: #006a4e;
     }
 
     .navBarRight li a:hover{
-        background-color: #862a5c;
+        background-color: #006a4e;
     }
 }
 
@@ -141,7 +134,7 @@ a{
     #table1 td::before
     {
         text-align: left;
-        color: #862a5c;
+        color: #006a4e;
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -153,10 +146,10 @@ a{
 
     .toggleButton .bar
     {
-    background-color: #862a5c;
+    background-color: #006a4e;
     }
 
     .navBarRight li a:hover{
-        background-color: #862a5c;
+        background-color: #006a4e;
     }
 }

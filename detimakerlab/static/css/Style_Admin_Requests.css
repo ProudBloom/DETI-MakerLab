@@ -1,0 +1,142 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+}
+
+.requests
+{
+    background-color: #f1f1f1;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.pendingRequestsText
+{
+    padding: 30px;
+}
+
+.itemListText
+{
+    padding: 20px;
+}
+
+.itemList
+{
+    display: block;
+    justify-content: center;
+}
+
+#tab1, #tab2
+{
+    border-collapse: collapse;
+    margin: 0px 5px 0px;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 95%;
+    justify-self: center;
+}
+
+#tab1 thead tr, #tab2 thead tr
+{
+    background-color: #003366;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+#tab2 thead tr
+{
+    background-color: #ff7373;
+}
+
+#tab1 th, #tab1 td, #tab2 th, #tab2 td
+{
+    padding: 12px 15px;
+}
+
+#tab1 tbody tr
+{
+    border-bottom: 1px solid #dddddd;
+}
+
+#tab1 tbody tr:nth-last-of-type(even)
+{
+    background-color: #e6e6e6;
+}
+
+
+#tab1 tbody tr button
+{
+    padding: 5px 25px;
+    font-size: 12px;
+    border: none;
+}
+
+.acceptReq
+{
+    margin-right: 10px;
+    background-color: #5ac18e;
+    content: "&#10003";
+}
+
+.denyReq
+{
+    background-color: #f6546a;
+    content: "&#10008";
+}
+
+.acceptReq:hover
+{
+    cursor: pointer;
+}
+
+.denyReq:hover
+{
+    cursor: pointer;
+}
+
+.table-sortable th
+{
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after
+{
+    content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after
+{
+    content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after, 
+.table-sortable .th-sort-desc::after
+{
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc
+{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.requestHistoryText
+{
+    display: block;
+    padding: 30px;
+}

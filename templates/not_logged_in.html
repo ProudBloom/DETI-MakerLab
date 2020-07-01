@@ -1,0 +1,18 @@
+{% load static %}
+{% block mainblock %}
+<link rel="stylesheet" type="text/css" href="../static/css/Style_not_logged_in.css">
+<div class="wrapper">
+    <div class="text">
+        <h1 class="heading">OOPS!</h1>
+        <h3 class="sub-heading">You need to log in <br> to access this content</h3>
+    </div>
+    <div class="danger-sign">
+        <img src="../static/img/DangerSign.png" alt="green danger sign">
+    </div>
+</div>
+<div class="buttons">
+<button class="btt" onclick="location.href = 'http://localhost:8000';">&lt&lt Back to site</button>
+<button class="btt rotate-up" onclick="location.href = 'http://localhost:8000/about';">Log-in &gt&gt </button>
+</div>
+
+{% endblock %}

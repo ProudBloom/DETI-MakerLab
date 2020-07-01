@@ -24,6 +24,13 @@ class RequestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class RequestPostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Request
+        #fields = '__all__'
+        exclude = ('dateAcknowledged',)
+
+
 class ExitSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exit

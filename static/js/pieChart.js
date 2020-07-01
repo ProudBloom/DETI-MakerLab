@@ -4,7 +4,7 @@ google.charts.setOnLoadCallback(drawChart);
       function drawChart() 
       {
         const request = new XMLHttpRequest;
-        request.open('GET', 'http://localhost:8000/tech/stats/');
+        request.open('GET', getStatsURL);
         request.onload = () =>
         {
           var equipmentStatData = JSON.parse(request.responseText);

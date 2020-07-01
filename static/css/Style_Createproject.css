@@ -5,36 +5,80 @@
     list-style: none;
 }
 
+.container
+{
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    position: relative;
+    top: 100px;
+    background: url(../img/BackgroundMainCropped.png);
+    justify-content: center;
+}
+
 #projectTitle{
+    margin-top: 20px;
     text-align: center;
+    font-size: 48px;
 }
 
 .cr_project
 {
-    font-family: TommySoft_Black;
     background-color: #f1f1f1;
     flex-direction: column;
     width: 75%;
+    height: 837px;
 }
 
 .project_form{
-    width: 500px;
+    width: 95.5%;
     margin: 2rem auto;
-    border: 2px solid #bfd37a;
     padding: 2rem;
 }
 
-.project_input{
-    display: block;
+.top-inputs, .middle-inputs
+{
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.top-inputs input, .middle-inputs input
+{
+    width: 300px;
+}
+
+.top-labels, .middle-labels
+{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-input
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bottom-input select
+{
+    display: flex;
+    justify-self: center;
+}
+
+.project_form label, legend
+{
+    font-size: 20px;
+}
+
+.project_input{
     color: black;
-    border-radius: 4px;
     background-color: #e6e6e6;
     font-size: 15px;
-    margin: 10px 0px 10px 0px;
     padding: 10px;
     border: 0;
-    
 }
 
 .project_input_label{
@@ -51,10 +95,15 @@
     -moz-appearance: none;
     display: block;
     padding: 10px 50px 10px 10px;
-    margin: 10px 0px 10px 0px;
     background-color: #e6e6e6;
     border-radius: 4px;
     width: 30%;
+}
+
+.button
+{
+    display: flex;
+    justify-content: center;
 }
 
 #submitBtn{
@@ -70,50 +119,26 @@
     text-decoration: none;
     border: 2px solid #bfd37a;
     text-align: center;
-    position: relative;
     font-weight: bolder;
     transition: all .2s;
 }
 
-#submitBtn:after
-{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: #bfd37a;
-    transition: all .35s;
-}
-
 #submitBtn:hover
 {
-    color: white;
+    color: darkgray;
 }
 
-#submitBtn:hover:after
-{
-    height: 100%;
-}
-
-
-.container
-{
-    font-family: Helvetica, sans-serif;
-    display: flex;
-    position: relative;
-    top: 100px;
-    background: url(../img/BackgroundMainCropped.png);
-    justify-content: center;
-    height: 850px;
-}
 
 @media (min-width: 1701px)
 {
     .cr_project
     {
         font-size: 50px;
+    }
+
+    #tab1{
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 }
 
@@ -127,6 +152,10 @@
     {
         font-size: 25px;
     }
+    #tab1{
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 } 
 
 @media (max-width: 1050px)
@@ -137,6 +166,10 @@
     .cr_project
     {
         font-size: 30px;
+    }
+    #tab1{
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .project_input_label
@@ -155,6 +188,10 @@
     {
         font-size: 20px;
         width: 100%;
+    }
+    #tab1{
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .project_input_label

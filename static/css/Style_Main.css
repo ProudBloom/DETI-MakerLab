@@ -5,90 +5,115 @@
     list-style: none;
 }
 
-.PhotoTop
-{
-    position: absolute;
-}
-
-.PhotoTop img
+.wrapper
 {
     width: 100%;
-    height: 100%;
+    top: 100px;
 }
 
-.paragraphs
+.top-section
 {
-    top: 400px;
-    position: absolute;
+    background: url(../img/BackgroundMainCropped.png) center no-repeat;
     width: 100%;
-    background-color: #13434d;
-    z-index: 10;
-    opacity: 60%;
+    height: 950px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.paragraphs p
+.login-button
 {
-    font-family: Tommy_Bold;
-    font-size: 20px;
-    color:whitesmoke;
-    margin: 20px 40px;
-    text-align: right;
+    position: absolute;
+    top: 100px;
+    padding: 50px 100px;
+    margin-top: 20%;
+    background-color: #1c1c1c;
+    border: none;
+    outline: none;
+    color: #bada55;
+    font-size: 2rem;
+    font-weight: 900;
+    border-radius: 5px;
+    transition: ease .5s;
 }
 
-.paragraphs a
+.login-button:hover
 {
-    color: #bfd37a;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: Tommy_Bold;
+    cursor: pointer;
+    transform: scale(1.5);
+    color: #bada55;
 }
 
-/* PC, windowed */
-@media only screen and (max-width: 1700px)
+.info
 {
-    .paragraphs
-    {
-        top: 260px;
-    }
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E4E4E4;
 }
 
-/* Tablet */
-@media only screen and (max-width: 1050px)
+.heading
 {
-    .navBarLogoBottom
-    {
-        font-size: 70px;
-    }
-
-    .paragraphs
-    {
-        top: 95%;
-        opacity: 1;
-        background-color: #bfd37a;
-    }
-
-    .paragraphs a
-    {
-        color: #13434d;
-    }
+    margin: 1.2rem 0;
+    padding: 2rem;
+    font-size: 3rem;
+    color: #515151;
+    font-weight: 700;
 }
 
-/* Phone - implement hamburger func */
-@media only screen and (max-width: 640px)
+.students, .technician
 {
-    .navBarLogoBottom
-    {
-        font-size: 50px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .paragraphs
-    {
-        opacity: 100%;
-        top: 242px;
-    }
-    
-    .paragraphs p
-    {
-        font-size: 12px;
-    }
+.students-text, .technician-text
+{
+    margin: 1rem;
+    padding: 1rem;
+    color: #515151;
+    font-size: 2rem;
+    font-weight: 500;
+    border-bottom: 2px solid #515151;
+}
+
+.students-icons, .technician-icons
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.students-icon, .technician-icon
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    transition: ease .5s;
+}
+
+.icon-image
+{
+    margin-bottom: 5rem;
+    height: 6rem;
+}
+
+.icon-text
+{
+    font-size: 1.2rem;
+    color: #515151;
+}
+
+.students-icon:hover, .technician-icon:hover
+{
+    transform: scale(1.2);
+}
+
+.placeholder
+{
+    height: 150px;
 }

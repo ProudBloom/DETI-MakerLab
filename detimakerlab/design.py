@@ -82,6 +82,7 @@ def edit_equipment(request):
 
 
 def statistics(request):
+
     return render(request, 'statistics.html')
 
 
@@ -126,3 +127,6 @@ def get_data(c=client):
 
     name, surname = json.loads(content)['name'], json.loads(content)['surname']
     return email, (name, surname)
+
+def not_logged_in(request):
+    return render(request, 'not_logged_in.html')

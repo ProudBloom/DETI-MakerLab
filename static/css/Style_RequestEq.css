@@ -1,10 +1,3 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 .container
 {
     font-family: Helvetica, sans-serif;
@@ -13,6 +6,7 @@
     top: 100px;
     background: url(../img/BackgroundMainCropped.png);
     justify-content: center;
+    min-height: 700px;
 }
 
 .rent
@@ -20,71 +14,42 @@
     background-color: #f1f1f1;
     flex-direction: column;
     width: 75%;
-    height: 100%;
-}
-
-.typeText
-{
-    text-align: center;
-    padding: 20px;
-}
-
-.typeSelectors
-{
-    display: flex;
-    margin-bottom: 30px;
-    justify-content: space-around;
-    background-color: #009879;
-}
-
-.typeSelectors a
-{
-    flex-basis: 25%;
-    margin: 15px 0px;
-    padding: 15px 35px;
-    text-decoration: none;
-    color: #1c1c1c;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.typeSelectors .middle1
-{
-    border-left: 1px solid #1c1c1c;
-    border-right: 1px solid #1c1c1c;
-}
-
-.typeSelectors .middle2
-{
-    border-right: 1px solid #1c1c1c;
-}
-
-.typeSelectors a:hover
-{
-    background-color: #66c1ae;
 }
 
 .itemListText
 {
-    padding: 20px;
+    padding: 30px;
 }
 
-.browse
+.itemListText .items-for-rent-text
 {
-    margin: -50px 20px 20px 20px;
+    margin: 20px 0px 50px 0px;
+}
+
+.project-selection
+{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin: 20px 0px;
 }
 
-.browse input
+.project-selection h3
 {
+    color: #494949;
+}
+
+#project-selectbox
+{
+    margin-left: 30px;
+    margin-top: -10px;
+    background-color: #009879;
+    color: #f1f1f1;
+    font-weight: bold;
     padding: 10px;
-    border-style:solid;
-    border:none;
-    border-radius: 10px;
-    background-color: #dddddd;
-    color: #1c1c1c;
-    margin-right: 15px;
+    width: 15%;
+    outline: none;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .itemList
@@ -101,6 +66,11 @@
     min-width: 400px;
     width: 95%;
     justify-self: center;
+}
+
+#tab1 th:hover
+{
+    cursor: pointer;
 }
 
 #tab1 thead tr
@@ -126,9 +96,40 @@
     background-color: #e6e6e6;
 }
 
-#tab1 tbody tr:last-of-type
+.table-sortable th
 {
-    border-bottom: 2px solid #009879;
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after
+{
+    content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after
+{
+    content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after, 
+.table-sortable .th-sort-desc::after
+{
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc
+{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.showDialogBtt
+{
+    padding: 10px 20px;
+    border: none;
+    outline:none;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .buttonDiv
@@ -149,6 +150,7 @@
     position: relative;
     font-weight: bolder;
     transition: all .2s;
+    cursor: pointer;
 }
 
 #rentBtt span
@@ -169,14 +171,63 @@
     transition: all .35s;
 }
 
-#rentBrr:hover
-{
-    color: white;
-}
-
 #rentBtt:hover:after
 {
     height: 100%;
+}
+
+.bg-modal
+{
+    width: 75%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content
+{
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    opacity: .85;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.modal-content img
+{
+    opacity: 1;
+    width: 70%;
+    height: 40%;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.modal-content p
+{
+    font-size: 1.2rem;
+    padding: 10px;
+    color: #606060;
+}
+
+.close
+{
+    position: absolute;
+    top: 10;
+    right: 15px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    border: none;
+    outline:none;
+    background-color: white;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1050px)

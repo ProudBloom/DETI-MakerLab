@@ -5,14 +5,9 @@
     list-style: none;
 }
 
-.navBarLogoTop
-{
-    color: #FF9232;
-}
-
 .toggleButton .bar
 {
-    background-color: #FF9232;
+    background-color: #bada55;
 }
 
 .container
@@ -39,62 +34,9 @@
     padding: 20px;
 }
 
-.typeSelectors
-{
-    display: flex;
-    margin-bottom: 30px;
-    justify-content: space-around;
-    background-color: #FF9232;
-}
-
-.typeSelectors a
-{
-    flex-basis: 25%;
-    margin: 15px 0px;
-    padding: 15px 35px;
-    text-decoration: none;
-    color: #1c1c1c;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.typeSelectors .middle1
-{
-    border-left: 1px solid #1c1c1c;
-    border-right: 1px solid #1c1c1c;
-}
-
-.typeSelectors .middle2
-{
-    border-right: 1px solid #1c1c1c;
-}
-
-.typeSelectors a:hover
-{
-    background-color: #66c1ae;
-}
-
 .itemListText
 {
     padding: 20px;
-}
-
-.browse
-{
-    margin: -50px 20px 20px 20px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.browse input
-{
-    padding: 10px;
-    border-style:solid;
-    border:none;
-    border-radius: 10px;
-    background-color: #dddddd;
-    color: #1c1c1c;
-    margin-right: 15px;
 }
 
 .itemList
@@ -115,7 +57,7 @@
 
 #tab1 thead tr
 {
-    background-color: #FF9232;
+    background-color: #bada55;
     color: white;
     text-align: left;
     font-weight: bold;
@@ -138,7 +80,14 @@
 
 #tab1 tbody tr:last-of-type
 {
-    border-bottom: 2px solid #FF9232;
+    border-bottom: 2px solid #bada55;
+}
+
+#tab1 img
+{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .buttonDiv
@@ -147,27 +96,28 @@
     justify-content: center;
 }
 
-#rentBtt
+#returnBtt
 {
     margin-top: 50px;
     width: 200px;
     height: 50px;
     font-size: 18px;
     text-decoration: none;
-    border: 2px solid #FF9232;
+    border: 2px solid #bada55;
     text-align: center;
     position: relative;
     font-weight: bolder;
     transition: all .2s;
+    cursor: pointer;
 }
 
-#rentBtt span
+#returnBtt span
 {
     position: relative;
     z-index: 2;
 }
 
-#rentBtt:after
+#returnBtt:after
 {
     position: absolute;
     content: "";
@@ -175,16 +125,11 @@
     left: 0;
     width: 100%;
     height: 0;
-    background: #FF9232;
+    background: #bada55;
     transition: all .35s;
 }
 
-#rentBrr:hover
-{
-    color: white;
-}
-
-#rentBtt:hover:after
+#returnBtt:hover:after
 {
     height: 100%;
 }

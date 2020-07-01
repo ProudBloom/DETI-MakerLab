@@ -2,31 +2,25 @@
 {% load static %}
 {% block mainblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/Style_RequestEq.css' %}">
-    <script type="text/javascript" src="{% static 'js/fetchEquipment.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'js/rentEquipmentLogic.js' %}" defer></script>
+    <script src="{% static 'js/tableSort.js' %}" defer> </script>
+    <script type="text/javascript" src="{% static 'js/showDialog.js' %}" defer></script>
+
     <div class="container">
         <div class="rent">
 
-            <div class="typeText">
-                <h1>Select item type</h1>
-            </div>
-            
-            <div class="typeSelectors">
-                <a href="#tab1">Family 1</a>
-                <a href="#tab1" class="middle1">Family 2</a>
-                <a href="#tab1" class="middle2">Family 3</a>
-                <a href="#tab1">Family 4</a>
-            </div>
-
             <div class="itemListText">
-                <h2>Select items for rent: </h2>
-            </div>
-
-            <div class="browse">
-                <input type="text" placeholder="Browse...">
+                <h2 class="items-for-rent-text">Select items for rent: </h2>
+                <div class="project-selection">
+                    <h3>Select a project to rent items corresponding to : </h3>
+                    <select id="project-selectbox">
+                        <option value="data1">data</option>
+                    </select>
+                </div>
             </div>
 
             <div class="itemList">
-                <table id="tab1">
+                <table id="tab1" class="table-sortable">
                     <thead>
                         <tr>
                             <th>Check</th>
@@ -35,6 +29,7 @@
                             <th>Description</th>
                             <th>In Stock</th>
                             <th>Status</th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,13 +40,23 @@
                             <td data-label="Desc">data</td>
                             <td data-label="Stock">data</td>
                             <td data-label="Status">data</td>
+                            <td data-label="Status">details</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="buttonDiv">
-                <button id="rentBtt"><span>RENT</span></button>
+                <button id="rentBtt" onclick="rentCheckedItems()"><span>RENT</span></button>
+            </div>
+
+            <div class="bg-modal">
+                <div class="modal-content">
+                    <button class="close" onclick="closeDialog()">+</button>
+                    <div class="data">
+                        
+                    </div>
+                </div>
             </div>
             
         </div>

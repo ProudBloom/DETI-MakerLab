@@ -28,6 +28,14 @@
     padding: 30px;
 }
 
+.pendingRequestsText p
+{
+    margin-top: 5px;
+    font-size: 10;
+    font-weight: normal;
+    font-style: oblique;
+}
+
 .itemListText
 {
     padding: 20px;

@@ -19,31 +19,31 @@ from django.urls import path, include
 from detimakerlab import design, settings
 
 urlpatterns = [
-    # API's
-    path('wiki/', include('detimakerlab.wiki.urls')),
-    path('tech/', include('detimakerlab.technician_api.urls')),
-    # path('users/', include('detimakerlab.users_api.urls')),
-    # path('admin/', admin.site.urls),
+                  # API's
+                  path('wiki/', include('detimakerlab.wiki.urls')),
+                  path('tech/', include('detimakerlab.technician_api.urls')),
+                  # path('users/', include('detimakerlab.users_api.urls')), # Not in use
+                  # path('admin/', admin.site.urls),
 
-    # Web pages
-    path('', design.homepage, name="homepage"),
-    path('about', design.about, name="about"),
-    path('all_equipment', design.all_equipment, name="all_equipments"),
-    path('create_project', design.create_project, name="create_project"),
-    path('navbar', design.nav_bar, name="nav_bar"),
-    path('rent_equipment', design.rent_equipment, name="rent_equipment"),
-    path('return_equipment', design.return_equipment, name="return_equipment"),
-    path('student', design.student, name="student"),
-    path('login', design.login),
+                  # Web pages
+                  path('', design.homepage, name="homepage"),
+                  path('about', design.about, name="about"),
+                  path('all_equipment', design.all_equipment, name="all_equipments"),
+                  path('create_project', design.create_project, name="create_project"),
+                  path('navbar', design.nav_bar, name="nav_bar"),
+                  path('rent_equipment', design.rent_equipment, name="rent_equipment"),
+                  path('return_equipment', design.return_equipment, name="return_equipment"),
+                  path('student', design.student, name="student"),
+                  path('not_logged_in', design.not_logged_in, name="not_logged_in"),
+                  path('login', design.login),
+                  path('technician', design.technician, name="technician"),
+                  path('requests', design.requests, name='requests'),
+                  path('edit_equipment', design.edit_equipment, name='edit_equipment'),
+                  path('statistics', design.statistics, name='statistics'),
+                  path('my_projects', design.my_projects, name='my_projects'),
+                  path('team', design.team, name='team'),
 
-    # To be updated
-    path('technician', design.technician, name="technician"),
-    path('requests', design.requests, name='requests'),
-    path('edit_equipment', design.edit_equipment, name='edit_equipment'),
-    path('statistics', design.statistics, name='statistics'),
-    path('my_projects', design.my_projects, name='my_projects'),
-    path('team', design.team, name='team'),
+                  # WIKI STUFF
+                  path('test/', include('detimakerlab.wiki.plugins.article_dependencies.urls'))
 
-    # WIKI SHIT
-    path('test/', include('detimakerlab.wiki.plugins.article_dependencies.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

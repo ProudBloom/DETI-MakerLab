@@ -25,12 +25,22 @@
 
 .person
 {
-    margin: 20px 30px;
+    margin: 20px 0px;
     display: table;
+    width: 100%;
+}
+
+.person:nth-last-of-type(even)
+{
+    background-color: #dddddd;
 }
 
 .person img
 {
+    margin: 10px 30px;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
     display: table-cell;
     vertical-align: middle;
 }
@@ -40,6 +50,7 @@
     padding: 20px;
     display: table-cell;
     vertical-align: middle;
+    width: 100%;
 }
 
 .person .info_l span

@@ -13,7 +13,7 @@ function formatDate(date, beginning, end)
 function getStatData()
 {
     const request = new XMLHttpRequest;
-    request.open('GET', 'http://localhost:8000/tech/stats/');
+    request.open('GET', getStatsURL);
     
     request.onload = () =>
     {
@@ -92,12 +92,15 @@ function populatePopularEqs(json)
 
     for(var i in popularEqs)
     {
-        const tr = document.createElement("tr");
+        if(i <= 5)
+        {
+            const tr = document.createElement("tr");
 
-        tr.innerHTML = "<td>" + popularEqs[i].family + "</td>" +
-                        "<td>" + popularEqs[i].description + "</td>" +
-                        "<td>" + popularEqs[i].TimesRequested + "</td>";
-        popular_table.append(tr);
+            tr.innerHTML = "<td>" + popularEqs[i].family + "</td>" +
+                            "<td>" + popularEqs[i].description + "</td>" +
+                            "<td>" + popularEqs[i].TimesRequested + "</td>";
+            popular_table.append(tr);
+        }
     }
 }
 

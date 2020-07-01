@@ -2,15 +2,12 @@
 {% load static %}
 {% block mainblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/Style_ReturnEq.css' %}">
+    <script src="{% static 'js/returnEquipmentLogic.js' %}" defer></script>
     <div class="container">
         <div class="rent">
 
             <div class="itemListText">
                 <h2>Your items: </h2>
-            </div>
-
-            <div class="browse">
-                <input type="text" placeholder="Browse...">
             </div>
 
             <div class="itemList">
@@ -21,40 +18,25 @@
                             <th>#ID</th>
                             <th>Family</th>
                             <th>Description</th>
-                            <!-- <th>Amount</th> TO BE IMPLEMENTED LATER-->
+                            <th>Qty</th>
+                            <th>Image</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td data-label="Check"><input type="checkbox"></td>
-                            <td data-label="#ID">1</td>
-                            <td data-label="Family">Asus</td>
-                            <td data-label="Desc">Motherboard</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Check"><input type="checkbox"></td>
-                            <td data-label="#ID">2</td>
-                            <td data-label="Family">Arduino</td>
-                            <td data-label="Desc">Microchip</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Check"><input type="checkbox"></td>
-                            <td data-label="#ID">3</td>
-                            <td data-label="Family">Arduino</td>
-                            <td data-label="Desc">Movement sensor</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Check"><input type="checkbox"></td>
-                            <td data-label="#ID">4</td>
-                            <td data-label="Family">Raspberry PI</td>
-                            <td data-label="Desc">Microchip</td>
+                            <td data-label="#ID">data</td>
+                            <td data-label="Family">data</td>
+                            <td data-label="Desc">data</td>
+                            <td>data</td>
+                            <td>data</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="buttonDiv">
-                <button id="rentBtt"><span>RETURN</span></button>
+                <button id="returnBtt" onclick="returnCheckedItems()"><span>RETURN</span></button>
             </div>
 
         </div>

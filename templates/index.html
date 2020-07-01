@@ -2,22 +2,52 @@
 {% load static %}
 
 {% block mainblock %}
-    <link rel="stylesheet" href="{% static 'css/Style_Main.css' %}" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap"rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'css/Style_Main.css' %}" type="text/css">
 
-    <div class="PhotoTop">
-        <img src="{% static 'img/BackgroundMainCropped.png' %}" alt="Desaturated UA photo 1920x1080">
-
-        <div class="paragraphs">
-            <p class="p1">In order to fully experience the MakerLab web application user need to be logged-in.</p>
-            <p class="p2">To log-in enter the <a href="#">login</a> section, after that you will be redirecetd to the UA
-                authentication site.</p>
-            <p class="p3">User can be logged in as the student or a staff member. Functions differs depending on the
-                account.</p>
-            <p class="p4">To see more information visit the <a href="{% url 'about' %}">about</a> section.</p>
+    <div class="wrapper">
+        <div class="top-section">
+            <button class="login-button" onclick="location.href = 'http://localhost:8000/login';">LOG IN</button>
         </div>
-    </div>
+    
+        <div class="info">
+            <h1 class="heading">A perfect site for the UA :</h2>
+            <div class="students">
+                <h2 class="students-text">Students</h2>
+                <div class="students-icons">
+                    <div class="students-icon">
+                        <img src="../static/img/arduino-icon.png" alt="Arduino icon" class="icon-image">
+                        <p class="icon-text">Borrow and return equipments</p>
+                    </div>
+                    <div class="students-icon">
+                        <img src="../static/img/search-icon.png" alt="Magnifier icon" class="icon-image">
+                        <p class="icon-text">Browse through all parts</p>
+                    </div>
+                    <div class="students-icon">
+                        <img src="../static/img/project-icon.png" alt="Rocket icon" class="icon-image">
+                        <p class="icon-text">Create and manage projects</p>
+                    </div>
+                </div>
+            </div>
 
-    <div class="navBarLogoBottom">
-        <p><a href="{% url 'homepage' %}">MAKERLAB</a></p>
+            <div class="technician">
+                <h2 class="technician-text">Technician</h2>
+                <div class="technician-icons">
+                    <div class="technician-icon">
+                        <img src="../static/img/requests-icon.png" alt="Letter icon" class="icon-image">
+                        <p class="icon-text">Manage requests from students</p>
+                    </div>
+                    <div class="technician-icon">
+                        <img src="../static/img/maintenance-icon.png" alt="Maintenance icon" class="icon-image">
+                        <p class="icon-text">Easily maintain all equipments</p>
+                    </div>
+                    <div class="technician-icon">
+                        <img src="../static/img/statistics-icon.png" alt="Statistics icon" class="icon-image">
+                        <p class="icon-text">Browse statistics and trends</p>
+                    </div>
+                </div>
+            </div>
+            <div class="placeholder"></div>
+        </div>
     </div>
 {% endblock %}

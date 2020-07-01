@@ -13,7 +13,7 @@ from rest_framework.views import APIView
 
 from detimakerlab.technician_api.models import *
 from detimakerlab.technician_api.serializers import EquipmentsSerializer, ProjectSerializer, RequestSerializer, \
-    ExitSerializer, StudentSerializer, GroupSerializer, MissingSerializer
+    ExitSerializer, StudentSerializer, GroupSerializer, MissingSerializer, RequestPostSerializer
 
 
 @csrf_exempt
@@ -86,15 +86,12 @@ class BorrowEquipments(APIView):
         except Equipments.DoesNotExist:
             return Response('Equipment not found', status=HTTP_404_NOT_FOUND)
 
-    def put(self, request, pk):
+    def patch(self, request, pk):
         equipment = self.get_object(pk)
-        serializer = EquipmentsSerializer(equipment, data=request.data)
-        if serializer.is_valid():
-            equipment.borrow_equipment()
-            equipment.set_status()
-            return Response(serializer.data, status=HTTP_200_OK)
-        return Response('{Error: equipment not found}', status=HTTP_404_NOT_FOUND)
-
+        a = equipment.borrow_equipment()
+        if(a == HTTP_500_INTERNAL_SERVER_ERROR):
+            return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(status=HTTP_200_OK)
 
 class ReturnEquipments(APIView):
     """
@@ -108,27 +105,33 @@ class ReturnEquipments(APIView):
         except Equipments.DoesNotExist:
             return Response('Equipment not found', status=HTTP_404_NOT_FOUND)
 
-    def put(self, request, pk, format=None):
+    def patch(self, request, pk):
         equipment = self.get_object(pk)
-        serializer = EquipmentsSerializer(equipment, data=request.data)
-        if serializer.is_valid():
-            equipment.return_equipment()
-            equipment.set_status()
-            return Response(serializer.data, status=HTTP_200_OK)
-        return Response('{Error: equipment not found}', status=HTTP_404_NOT_FOUND)
-
+        a = equipment.return_equipment()
+        print(a)
+        if(a == 'INVALID'):
+            print('----------HERE---------')
+            return Response(status=HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(status=HTTP_200_OK)
 
 # List of Requests
 class ListAllRequests(generics.ListCreateAPIView):
     """
         GET Method return all requests.
         POST method creates a new request:
-            @:param equipment_ref: <int>
-            @:param project_ref: <int>
+            @:param equipment_ref: <str>
+            @:param project_ref: <str>
             Those parameters are passed in the body of the request.
     """
+
     queryset = Request.objects.all()
-    serializer_class = RequestSerializer
+
+    def get_serializer_class(self):
+        method = self.request.method
+        if method == 'PUT' or method == 'POST':
+            return RequestPostSerializer
+        else:
+            return RequestSerializer
 
 
 class RequestsDetails(generics.RetrieveUpdateDestroyAPIView):
@@ -139,7 +142,13 @@ class RequestsDetails(generics.RetrieveUpdateDestroyAPIView):
             @:param id: <int>
     """
     queryset = Request.objects.all()
-    serializer_class = RequestSerializer
+
+    def get_serializer_class(self):
+        method = self.request.method
+        if method == 'PUT' or method == 'POST':
+            return RequestPostSerializer
+        else:
+            return RequestSerializer
 
 
 # Deal with requests
@@ -219,55 +228,6 @@ class ExitsByProject(APIView):
 class Statistics(APIView):
     def get(self, pk):
         try:
-            '''
-            # information contained only in one table
-            sumEquipments = Equipments.objects.count()
-            print("Sum equipments: " + str(sumEquipments))
-            sumProjects = Project.objects.count()
-            print("Sum projects: " + str(sumProjects))
-            sumStudents = Student.objects.count()
-            print("Sum students: " + str(sumStudents))
-            oldestRequest = Request.objects.all().order_by("timestamp")[0]
-            print("oldest request: " + str(oldestRequest) + " " + str(oldestRequest.timestamp))
-            mostRecentRequest = Request.objects.latest("timestamp")
-            print("latest request: " + str(mostRecentRequest) + " " + str(mostRecentRequest.timestamp))
-
-            # Aggregated information involving multiple tables
-            print("Requests per equipment:")
-            mostRequestedEquipment = Equipments.objects.annotate(
-                requests=Count('request'))  # Counts the ocurences of each equipment in the requests table
-            for a in mostRequestedEquipment:
-                print("\t" + str(a.description) + ": " + str(a.requests))
-
-            print("Status per request:")
-            RequestStatus = Request.objects.values('status').annotate(total=Count('status'))
-            for a in RequestStatus:
-                # print("\t" + str(a['status'] + ": " + str(a['statusCount'])))
-                print('\t ' + str(a))
-
-            print("Requests per project:")
-            RequestPerProject = Project.objects.annotate(requests=Count('request'))
-            for a in RequestPerProject:
-                print('\t ' + str(a) + " requests: " + str(a.requests))
-
-            # Equipment status (total available and unavailable)
-            print("equipment status")
-            EquipmentsStatusAvailable = Equipments.objects.values('status').annotate(total=Count('status'))
-            for a in EquipmentsStatusAvailable:
-                print(a)
-
-            print("equipment status")
-            EquipmentsStatusBroken = Equipments.objects.values('broken').annotate(total=Count('broken'))
-            for a in EquipmentsStatusBroken:
-                print(a)
-
-            print("Broken/OK")
-            ok = Equipments.objects.filter(broken='no')
-            print(ok)
-            yes = Equipments.objects.filter(broken='yes')
-            print(yes)
-            '''
-
             response_data = {}
 
             latestRequests = Request.objects.select_related().order_by("-timestamp")[:5]
@@ -294,6 +254,16 @@ class Statistics(APIView):
             for l in popularEquipmentsList:
                 l['image_file'] = str(l['image_file'])
             response_data['popularRequests'] = popularEquipmentsList
+
+            ExitsPerDay = (Exit.objects
+                           # get specific dates (not hours for example) and store in "created"
+                           .extra({'date': "date(timestamp)"})
+                           # get a values list of only "created" defined earlier
+                           .values('date')
+                           # annotate each day by Count of Arrival objects
+                           .annotate(created_count=Count('id')))
+            ExitsPerDay = [i for i in ExitsPerDay]
+            response_data['ExitsPerDay'] = ExitsPerDay
 
             return JsonResponse(response_data, json_dumps_params={'indent': 5})
 
@@ -347,3 +317,21 @@ class MissingDetailsView(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Missing.objects.all()
     serializer_class = MissingSerializer
+
+
+class StudentGroups(APIView):
+    def get(self, request, pk):
+        try:
+            groups = Group.objects.filter(students__nmec=pk)
+
+            projects =[]
+            for group in groups:
+                if hasattr(group, 'cod_project'):   # some groups might have no project, in that case they are ignored
+                    projects.append(group.cod_project)
+
+            serializer = ProjectSerializer(projects, many=True)
+
+            return Response(serializer.data, status=HTTP_200_OK)
+
+        except Request:
+            return Response('Error', status=HTTP_500_INTERNAL_SERVER_ERROR)

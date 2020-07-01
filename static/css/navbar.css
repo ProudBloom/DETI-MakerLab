@@ -74,7 +74,7 @@
 {
     height: 3px;
     width: 100%;
-    background-color: #bfd37a;
+    background-color: #A8E6CE;
     border-radius: 10px;
 }
 
@@ -104,7 +104,7 @@
 
 .navBarRight li a:hover
 {
-    background-color: #bfd37a;
+    background-color: #bada55;
 }
 
 ul li ul li
@@ -120,18 +120,21 @@ ul li:hover ul li
 .navBarLogoTop
 {
     float: left;
-    color: #bfd37a;
+    margin-left: 20px;
     text-align: center;
-    padding: 20px 20px 17px 20px;
     text-decoration: none;
-    font-size: 50px;
-    font-family: TommySoft_Black;
+}
+
+.navBarLogoTop img
+{
+    height: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .navBarLogoBottom
 {
     float: left;
-    color: #bfd37a;
     text-align: center;
     padding: 0px 20px;
     text-decoration: none;
@@ -140,12 +143,6 @@ ul li:hover ul li
     z-index: 10;
     position: absolute;
     top: 90px;
-}
-
-.navBarLogoBottom a
-{
-    color: #bfd37a;
-    text-decoration: none;
 }
 
 

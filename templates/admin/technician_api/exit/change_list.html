@@ -1,0 +1,86 @@
+{% extends "admin/change_list.html" %}
+{% load static %}
+
+<!-- Override extrahead to add Chart.js -->
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  var request = new XMLHttpRequest()
+
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'http://localhost:8000/tech/stats/?format=json', true)
+
+request.onload = function() {
+  // Begin accessing JSON data here
+    // Sample data
+    var data = JSON.parse(this.response)
+    var a = data.ExitsPerDay
+  const chartData = data.ExitsPerDay
+
+
+  // Parse the dates to JS
+  chartData.forEach((d) => {
+    d.x = new Date(d.date);
+    d.y = d.created_count;
+  });
+
+  // Render the chart
+  const chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      datasets: [
+        {
+          label: 'Exits Per Day',
+          data: chartData,
+          backgroundColor: 'rgba(220,20,20,0.5)',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [
+          {
+            type: 'time',
+            time: {
+              unit: 'day',
+              round: 'day',
+              displayFormats: {
+                day: 'MMM D',
+              },
+            },
+          },
+        ],
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    },
+  });
+}
+
+// Send request
+request.send()
+
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- Render our chart -->
+<div style="width: 80%;">
+  <canvas style="margin-bottom: 30px; width: 60%; height: 50%;" id="myChart"></canvas>
+</div>
+<!-- Render the rest of the ChangeList view -->
+{{ block.super }}
+{% endblock %}

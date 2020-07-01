@@ -55,11 +55,11 @@ urlpatterns = [
 
     # Requests
     path('requests/', views.ListAllRequests.as_view(), name='Requests'),
-    path('requests/<int:pk>/', views.RequestsDetails.as_view(), name='Requests'),
-    path('requests/approve/<int:pk>/', views.ApproveRequest.as_view(), name='Make Request'),
-    path('requests/deny/<int:pk>/', views.DenyRequest.as_view(), name='Make Request'),
-    path('borrow/<int:pk>/', views.BorrowEquipments.as_view(), name='Validate equipment borrow'),
-    path('return/<int:pk>/', views.ReturnEquipments.as_view(), name='Validate equipment return'),
+    path('requests/<str:pk>/', views.RequestsDetails.as_view(), name='Requests'),
+    path('requests/approve/<str:pk>/', views.ApproveRequest.as_view(), name='Make Request'),
+    path('requests/deny/<str:pk>/', views.DenyRequest.as_view(), name='Make Request'),
+    path('borrow/<str:pk>/', views.BorrowEquipments.as_view(), name='Validate equipment borrow'),
+    path('return/<str:pk>/', views.ReturnEquipments.as_view(), name='Validate equipment return'),
 
     # Exits
     path('exits/', views.ListAllExits.as_view(), name='Exits'),
@@ -74,5 +74,14 @@ urlpatterns = [
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
+    # Statistics
     url('stats/', views.Statistics.as_view(), name='Statistics'),
+
+    # Groups where a student is part of
+    path('student_groups/<int:pk>/', views.StudentGroups.as_view(), name='Groups a student is part of'),
 ]
+
+
+admin.site.site_header = "Makers Lab Admin"
+admin.site.site_title = "Makers Lab Admin Portal"
+admin.site.index_title = "Make's Lab Administration Page"
